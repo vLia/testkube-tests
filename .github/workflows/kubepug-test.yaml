@@ -1,0 +1,25 @@
+name: kubepug
+on:
+  push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install kubectl
+        run: ls
+      - name: Install Testkube
+        run: |
+          wget -qO - https://repo.testkube.io/key.pub | sudo apt-key add -
+          echo "deb https://repo.testkube.io/linux linux main" | sudo tee -a /etc/apt/sources.list
+          sudo apt-get update
+          sudo apt-get install -y testkube
+      - name: Install kubepug executor temporarily
+        run: ls
+      - name: Use Testkube dev cluster
+        run: ls
+      - name: Run
+        run: |
+          kubectl get ingress some-invalid-ingress | kubectl testkube create test --name kubepug-test
+        kubectl run test kubepug-test
+
