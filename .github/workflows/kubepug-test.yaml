@@ -6,24 +6,40 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Install kubectl
-        uses: azure/setup-kubectl@v2.0
-      - name: Install Testkube
-        run: |
-          wget -qO - https://repo.testkube.io/key.pub | sudo apt-key add -
-          echo "deb https://repo.testkube.io/linux linux main" | sudo tee -a /etc/apt/sources.list
-          sudo apt-get update
-          sudo apt-get install -y testkube
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run on local file
-        run: |
-          kubectl testkube create test --file example-manifest.yaml --type kubepug/yaml --name kubepug-file-test
-          kubectl run test kubepug-file-test
-      - name: Use Testkube dev cluster
-        run: ls
       - name: Run
         run: ls # |
           #kubectl get ingress some-invalid-ingress | kubectl testkube create test --name kubepug-test
           #kubectl run test kubepug-test
 
+      # Get code
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup gcloud CLI 
+      - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
+        with:
+          service_account_key: ${{ secrets.GKE_SA_KEY }}
+          project_id: ${{ secrets.GKE_PROJECT }}
+
+      # Configure Docker to use the gcloud command-line tool as a credential
+      # helper for authentication
+      - run: |-
+          gcloud --quiet auth configure-docker
+
+      # Get the GKE credentials so we can deploy to the cluster
+      - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
+        with:
+          cluster_name: ${{ secrets.GKE_CLUSTER_NAME_DEV }}
+          location: ${{ secrets.GKE_ZONE_DEV }}
+          credentials: ${{ secrets.GKE_SA_KEY }}
+
+      # Installing Testkube CLI:
+      - name: Install Testkube CLI
+        run: |-
+          bash < <(curl -sSLf https://kubeshop.github.io/testkube/install.sh )
+          
+      # Run Testkube test on a GKE cluster
+      - name: Run with local file
+        run: |
+          kubectl testkube create test --file example-manifest.yaml --type kubepug/yaml --name kubepug-file-test
+          kubectl run test kubepug-file-test
