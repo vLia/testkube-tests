@@ -42,4 +42,4 @@ jobs:
       - name: Run with local file
         run: |
           kubectl testkube create test --file example-manifest.yaml --type kubepug/yaml --name kubepug-file-test
-          kubectl run test kubepug-file-test
+          kubectl testkube run test kubepug-file-test
