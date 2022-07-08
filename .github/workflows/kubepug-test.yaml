@@ -6,6 +6,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # Get code and short git hash
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
       # Set up gcloud
       - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
         with:
@@ -25,13 +32,6 @@ jobs:
       - name: Install Testkube CLI
         run: |-
           bash < <(curl -sSLf https://kubeshop.github.io/testkube/install.sh )
-          
-      # Get code and short git hash
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set outputs
-        id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       # Run with file
       - name: Run with local file
