@@ -6,12 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.4.2
       - name: Set unique var
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Test Action
-        uses: ./.github/actions/action-testkube-gke
+        uses: ./.github/actions/testkube-gke
         with:
           gke-sa-key: ${{ secrets.GKE_SA_KEY }}
           gke-project-id: ${{ secrets.GKE_PROJECT }}
