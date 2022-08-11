@@ -68,5 +68,5 @@ runs:
         namespace: ${{ inputs.namespace }}
         api-key: ${{ inputs.api-key }}
         api-url: ${{ inputs.api-url }}
-        parameters: ${{ input.parameters }}
-        stdin: ${{ input.stdin }}
+        parameters: ${{ inputs.parameters }}
+        stdin: ${{ inputs.stdin }}
