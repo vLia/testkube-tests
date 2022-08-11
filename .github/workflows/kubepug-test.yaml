@@ -1,6 +1,6 @@
 name: kubepug
 on:
-  push
+  workflow_dispatch
 
 jobs:
   test:
