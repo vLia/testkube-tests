@@ -13,10 +13,11 @@ jobs:
       - name: Test Action
         uses: ./.github/actions/testkube-gke
         with:
-          gke-sa-key: ${{ secrets.GKE_SA_KEY }}
-          gke-project-id: ${{ secrets.GKE_PROJECT }}
-          gke-cluster-name: ${{ secrets.GKE_CLUSTER_NAME_DEV }}
-          gke-zone: ${{ secrets.GKE_ZONE_DEV }}
+          provider: gcp
+          sa-key: ${{ secrets.GKE_SA_KEY }}
+          project: ${{ secrets.GKE_PROJECT }}
+          cluster-name: ${{ secrets.GKE_CLUSTER_NAME_DEV }}
+          zone: ${{ secrets.GKE_ZONE_DEV }}
           command: 'run'
           resource: 'test'
           namespace: 'testkube'
