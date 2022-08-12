@@ -17,15 +17,3 @@ jobs:
           resource: 'test'
           namespace: 'testkube'
           parameters: 'successful-soapui -f'
-      - name: Test Action
-        uses: kubeshop/testkube-cloud-action@v1
-        with:
-          provider: 'gcp'
-          sa-key: ${{ secrets.GKE_SA_KEY }}
-          project: ${{ secrets.GKE_PROJECT }}
-          cluster-name: ${{ secrets.GKE_CLUSTER_NAME_DEV }}
-          zone: ${{ secrets.GKE_ZONE_DEV }}
-          command: 'run'
-          resource: 'test'
-          namespace: 'testkube'
-          parameters: 'failing-soapui -f'
