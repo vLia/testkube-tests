@@ -5,15 +5,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.4.2
-      - name: Set unique var
-        id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Test Action
-        uses: kubeshop/testkube-cloud-action@v1.0.1
+        uses: kubeshop/testkube-cloud-action@v1
         with:
-          provider: gcp
+          provider: 'gcp'
           sa-key: ${{ secrets.GKE_SA_KEY }}
           project: ${{ secrets.GKE_PROJECT }}
           cluster-name: ${{ secrets.GKE_CLUSTER_NAME_DEV }}
@@ -21,4 +16,16 @@ jobs:
           command: 'run'
           resource: 'test'
           namespace: 'testkube'
-          parameters: 'successful-soapui'
+          parameters: 'successful-soapui -f'
+      - name: Test Action
+        uses: kubeshop/testkube-cloud-action@v1
+        with:
+          provider: 'gcp'
+          sa-key: ${{ secrets.GKE_SA_KEY }}
+          project: ${{ secrets.GKE_PROJECT }}
+          cluster-name: ${{ secrets.GKE_CLUSTER_NAME_DEV }}
+          zone: ${{ secrets.GKE_ZONE_DEV }}
+          command: 'run'
+          resource: 'test'
+          namespace: 'testkube'
+          parameters: 'failing-soapui -f'
