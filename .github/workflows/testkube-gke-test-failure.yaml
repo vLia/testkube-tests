@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test Action
-        uses: kubeshop/testkube-cloud-action@v1.0.0
+        uses: kubeshop/testkube-cloud-action@v1
         with:
           provider: 'gcp'
           sa-key: ${{ secrets.GKE_SA_KEY }}
