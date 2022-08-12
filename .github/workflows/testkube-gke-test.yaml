@@ -11,7 +11,7 @@ jobs:
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Test Action
-        uses: ./.github/actions/testkube-gke
+        uses: kubeshop/testkube-cloud-action@v1.0.1
         with:
           provider: gcp
           sa-key: ${{ secrets.GKE_SA_KEY }}
