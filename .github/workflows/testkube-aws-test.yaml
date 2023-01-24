@@ -53,8 +53,7 @@ jobs:
         KUBECONFIG: /home/runner/work/testkube-test/testkube-test/config
         KUBERNETES_MASTER: /home/runner/work/testkube-test/testkube-test/config
       with:
-        command: create
-        resource: test
-        namespace: testkube
-        parameters: "--type k6/script --name testkube-github-action"
-        stdin: "import http from 'k6/http';\nimport { sleep,check } from 'k6';\n\nexport default function () {\n  const baseURI = `${__ENV.TESTKUBE_HOMEPAGE_URI || 'https://testkube.kubeshop.io'}`\n  check(http.get(`${baseURI}/`), {\n    'check testkube homepage home page': (r) =>\n      r.body.includes('Your Friendly Cloud-Native Testing Framework for Kubernetes'),\n  });\n\n\n  sleep(1);\n}\n"
+        command: 'run'
+        resource: 'test'
+        namespace: 'testkube'
+        parameters: 'soapui-executor-smoke'
