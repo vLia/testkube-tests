@@ -1,7 +1,5 @@
 name: Testkube AWS Docker Action
-
-on:
-  push:
+on: [push, workflow_dispatch]
 
 env:
   DEPLOYMENT_NAME: hello-kubernetes-deployment # Add your deployment name here.
