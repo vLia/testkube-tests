@@ -50,8 +50,8 @@ jobs:
       id: create_test
       uses: kubeshop/testkube-docker-action@v1
       env:
-        KUBECONFIG: /home/runner/work/testkube-test/testkube-test/config
-        KUBERNETES_MASTER: /home/runner/work/testkube-test/testkube-test/config
+        KUBECONFIG: /home/runner/work/testkube-tests/testkube-tests/config
+        KUBERNETES_MASTER: /home/runner/work/testkube-tests/testkube-tests/config
       with:
         command: 'run'
         resource: 'test'
