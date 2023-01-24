@@ -53,7 +53,7 @@ jobs:
         KUBECONFIG: /home/runner/work/testkube-tests/testkube-tests/config
         KUBERNETES_MASTER: /home/runner/work/testkube-tests/testkube-tests/config
       with:
-        command: 'run'
+        command: 'get'
         resource: 'test'
         namespace: 'testkube'
-        parameters: 'soapui-executor-smoke'
+        # parameters: 'soapui-executor-smoke'
