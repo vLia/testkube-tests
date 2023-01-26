@@ -1,5 +1,8 @@
 name: testkube-gke-action
-on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   test:
