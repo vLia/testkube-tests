@@ -48,7 +48,7 @@ jobs:
         export KUBECONFIG=/home/runner/work/testkube-tests/testkube-tests/config
     - name: Create test
       id: create_test
-      uses: kubeshop/testkube-docker-action@v1
+      uses: kubeshop/testkube-docker-action@v1.3
       env:
         KUBECONFIG: /home/runner/work/testkube-tests/testkube-tests/config
         KUBERNETES_MASTER: /home/runner/work/testkube-tests/testkube-tests/config
@@ -57,4 +57,3 @@ jobs:
         resource: 'test'
         namespace: 'testkube'
         # parameters: 'soapui-executor-smoke'
-      run: apk add --no-cache aws-cli
