@@ -57,3 +57,4 @@ jobs:
         resource: 'test'
         namespace: 'testkube'
         # parameters: 'soapui-executor-smoke'
+      run: apk add --no-cache aws-cli
