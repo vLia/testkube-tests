@@ -1,0 +1,39 @@
+2023-03-22 14:56:24,220 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2023-03-22 14:56:24,250 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.5/libexec/bin/user.properties
+2023-03-22 14:56:24,251 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.5/libexec/bin/system.properties
+2023-03-22 14:56:24,254 INFO o.a.j.JMeter: Copyright (c) 1998-2022 The Apache Software Foundation
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: Version 5.5
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: java.version=18.0.2.1
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: os.name=Mac OS X
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: os.arch=aarch64
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: os.version=13.2.1
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: file.encoding=UTF-8
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: java.awt.headless=null
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: Max memory     =1073741824
+2023-03-22 14:56:24,255 INFO o.a.j.JMeter: Available Processors =8
+2023-03-22 14:56:24,261 INFO o.a.j.JMeter: Default Locale=English (EN)
+2023-03-22 14:56:24,261 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2023-03-22 14:56:24,261 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.5/libexec
+2023-03-22 14:56:24,261 INFO o.a.j.JMeter: user.dir  =/Users/lilla/kubeshop/src/testkube-tests/jmeter/executor-tests
+2023-03-22 14:56:24,261 INFO o.a.j.JMeter: PWD       =/Users/lilla/kubeshop/src/testkube-tests/jmeter/executor-tests
+2023-03-22 14:56:24,268 INFO o.a.j.JMeter: IP: 192.168.2.103 Name: Lillas-Air FullName: lillas-air
+2023-03-22 14:56:24,275 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2023-03-22 14:56:24,703 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2023-03-22 14:56:26,260 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=mac_os_x-a4a814af8de7ba7ed46454fbd6e176d0-gui
+2023-03-22 14:56:29,048 INFO o.j.r.PluginManager: Plugins Status: [jpgc-plugins-manager=1.7, jmeter-core=5.5, jmeter-ftp=5.5, jmeter-http=5.5, jmeter-jdbc=5.5, jmeter-jms=5.5, jmeter-junit=5.5, jmeter-java=5.5, jmeter-ldap=5.5, jmeter-mail=5.5, jmeter-mongodb=5.5, jmeter-native=5.5, jmeter-tcp=5.5, jmeter-components=5.5]
+2023-03-22 14:56:29,049 INFO o.j.r.PluginManagerMenuItem: Plugins Manager has upgrades: [jpgc-plugins-manager]
+2023-03-22 14:56:41,977 INFO o.a.j.s.FileServer: Default base='/Users/lilla/kubeshop/src/testkube-tests/jmeter/executor-tests'
+2023-03-22 14:56:41,979 INFO o.a.j.g.a.Load: Loading file: /Users/lilla/kubeshop/src/testkube-tests/jmeter/executor-tests/jmeter-executor-smoke.jmx
+2023-03-22 14:56:41,979 INFO o.a.j.s.FileServer: Set new base='/Users/lilla/kubeshop/src/testkube-tests/jmeter/executor-tests'
+2023-03-22 14:56:42,072 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2023-03-22 14:56:42,076 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2023-03-22 14:56:42,076 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2023-03-22 14:56:42,077 INFO o.a.j.s.SaveService: Loading file: /Users/lilla/kubeshop/src/testkube-tests/jmeter/executor-tests/jmeter-executor-smoke.jmx
+2023-03-22 14:56:42,130 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-03-22 14:56:42,130 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-03-22 14:56:42,130 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-03-22 14:56:42,130 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-03-22 14:56:42,130 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2023-03-22 14:56:42,130 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2023-03-22 14:56:42,215 INFO o.a.j.s.FileServer: Set new base='/Users/lilla/kubeshop/src/testkube-tests/jmeter/executor-tests'
