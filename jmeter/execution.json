@@ -1,0 +1,8 @@
+{
+  "id": "jmeter-test",
+  "args": [],
+  "variables": {},
+  "content": {
+    "type": "string"
+  }
+}
