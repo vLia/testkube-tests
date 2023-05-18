@@ -1,0 +1,10 @@
+apiVersion: executor.testkube.io/v1
+kind: Executor
+metadata:
+  name: knative-container-executor
+  namespace: testkube
+spec:
+  image: vlia/knative-executor:dev
+  executor_type: container
+  types:
+  - knative

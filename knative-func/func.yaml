@@ -1,0 +1,12 @@
+specVersion: 0.35.0
+name: hello-tk
+runtime: go
+registry: local/knfuncs
+image: local/knfuncs/hello-tk:latest
+created: 2023-05-17T14:42:27.364236+02:00
+build:
+  buildpacks:
+  - paketo-buildpacks/go-dist
+  - ghcr.io/boson-project/go-function-buildpack:tip
+  builder: pack
+  pvcSize: 256Mi
