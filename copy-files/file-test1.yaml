@@ -1,0 +1,27 @@
+apiVersion: tests.testkube.io/v3
+kind: Test
+metadata:
+  labels:
+    executor: copy-files-container-executor
+    test-type: copy-files-test
+  name: file-test1
+  namespace: testkube
+spec:
+  content:
+    data: "package main\n\nimport (\n\t\"fmt\"\n\t\"io\"\n\t\"log\"\n\t\"os\"\n)\n\nfunc
+      main() {\n\tfileName := os.Getenv(\"FILE\")\n\n\tfile, err := os.Open(fileName)\n\tif
+      err != nil {\n\t\tlog.Fatal(err)\n\t}\n\tdefer func() {\n\t\tif err = file.Close();
+      err != nil {\n\t\t\tlog.Fatal(err)\n\t\t}\n\t}()\n\n\tbuf := make([]byte, 32*1024)
+      // define your buffer size here.\n\n\tfor {\n\t\tn, err := file.Read(buf)\n\n\t\tif
+      n > 0 {\n\t\t\tfmt.Print(string(buf[:n])) // your read buffer.\n\t\t}\n\n\t\tif
+      err == io.EOF {\n\t\t\tbreak\n\t\t}\n\t\tif err != nil {\n\t\t\tlog.Printf(\"read
+      %d bytes: %v\", n, err)\n\t\t\tbreak\n\t\t}\n\t}\n\n}\n"
+    type: string
+  executionRequest:
+    argsMode: append
+    artifactRequest:
+      storageClassName: standard
+      volumeMountPath: /share
+      dirs:
+        - test/reports
+  type: copy-files/test

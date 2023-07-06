@@ -1,0 +1,12 @@
+apiVersion: executor.testkube.io/v1
+kind: Executor
+metadata:
+  name: copy-files-container-executor
+  namespace: testkube
+spec:
+  image: vlia/copy-files:dev
+  executor_type: container
+  types:
+  - copy-files/test
+  features:
+  - artifacts

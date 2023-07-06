@@ -1,0 +1,2 @@
+testkube create test --type copy-files/test --name copy-files-demo --file main.go --copy-files "file.txt:in_file.txt"
+testkube run test copy-files-demo --env FILE="/data/uploads/in_file.txt" --env DEBUG="true"
