@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class LibraryTest {
     @Test
     void someLibraryMethodReturnsTrue() {
-        String users = System.getProperty("users");
-        assertEquals("set_users", users, "unexpected value for users");
+        // System.getProperties().stringPropertyNames().forEach(System.out::println);
+        String env = System.getProperty("testkube");
+        assertTrue(Boolean.parseBoolean(env), "testkube property should be true");
     }
 }
