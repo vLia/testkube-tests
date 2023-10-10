@@ -9,7 +9,7 @@ class LibraryTest {
         assertTrue(Boolean.parseBoolean(env), "TESTKUBE_GRADLE env should be true");
         String users = System.getProperty("users","/tmp/log");
 	System.out.println(users);
-        assertTrue(users == "500", "users should be set to 500");
+        assertTrue(users == "500", users);
         System.out.println(users);
     }
 }
